@@ -1,0 +1,54 @@
+1.	pcd: Postcode of the address in its full form.
+2.	pcd2: Postcode formatted with additional spacing (like BR1  1AA).
+3.	pcds: Postcode, similar to pcd, typically used for sorting purposes.
+4.	pcd_no_spaces: Postcode without any spaces (e.g., BR11AA).
+5.	dointr: Date of introduction of the postcode (likely in the format YYYYMM).
+6.	doterm: Date of termination of the postcode (likely in the format YYYYMM, empty if active).
+7.	oscty: Code for the county (ONS).
+8.	oslaua: ONS code for the local authority district or unitary authority.
+9.	Local_Authority_name: Name of the local authority (e.g., Bromley).
+10.	osward: ONS code for the ward.
+11.	Ward_name_2014: Name of the electoral ward as defined in 2014.
+12.	usertype: Type of user of the data (e.g., 1 = residential, 0 = non-residential).
+13.	oseast1m: Easting coordinate from the Ordnance Survey’s national grid (meters).
+14.	osnrth1m: Northing coordinate from the Ordnance Survey’s national grid (meters).
+15.	osgrdind: Indicator for the precision of grid references (1 = full accuracy, 5 = lower accuracy).
+16.	oshlthau: ONS code for health authority.
+17.	hro: Health Region code (older ONS coding).
+18.	ctry: Country code (e.g., E92000001 for England).
+19.	gor: Government Office Region code (ONS).
+20.	streg: Statistical region (sub-region of the Government Office Region).
+21.	pcon: Parliamentary Constituency code (ONS).
+22.	eer: European Electoral Region code (ONS).
+23.	teclec: Territorial Electoral Commission code.
+24.	ttwa: Travel to Work Area code.
+25.	pct: Primary Care Trust code (ONS, NHS-related).
+26.	nuts: Nomenclature of Territorial Units for Statistics (European statistical region code).
+27.	psed: Indicator for Postcode Sector.
+28.	cened: Indicator for Census Enumeration District.
+29.	edind: Enumeration District indicator.
+30.	oshaprev: Indicator for post-1993 SHA boundary changes.
+31.	lea: Local Education Authority code.
+32.	oldha: Historical Health Authority code.
+33.	wardc91: Ward code from 1991 Census.
+34.	wardo91: Ward code based on 1991 administrative boundaries.
+35.	ward98: Ward code from the 1998 boundaries.
+36.	statsward: Statistical ward code.
+37.	oa01: Output Area code from the 2001 Census.
+38.	casward: 2001 Census Area Statistics ward code.
+39.	park: Flag indicating if the area is in a park (ONS definition).
+40.	lsoa01: Lower Layer Super Output Area (2001 Census).
+41.	msoa01: Middle Layer Super Output Area (2001 Census).
+42.	ur01ind: Urban/rural indicator from 2001 Census.
+43.	oac01: Output Area Classification from the 2001 Census.
+44.	oldpct: Primary Care Trust code (historical).
+45.	oa11: Output Area code from the 2011 Census.
+46.	lsoa11: Lower Layer Super Output Area (2011 Census).
+47.	msoa11: Middle Layer Super Output Area (2011 Census).
+48.	parish: Code for civil parish.
+49.	wz11: Workplace Zone code (2011).
+50.	ccg: Clinical Commissioning Group code (NHS-related).
+51.	bua11: Built-up Area code (2011).
+52.	buasd11: Built-up Area Sub-Division code (2011).
+53.	ru11ind: Rural/urban indicator (2011).
+54.	oac11: Output Area Classification (2011 Census).

@@ -1,0 +1,96 @@
+services:
+  router:
+    image: mongo:8.0.0
+    command: >
+      mongos --port 27017 --configdb configReplSet/hl-lab3-mongo-config-1:27017,hl-lab3-mongo-config-2:27017,hl-lab3-mongo-config-3:27017 --bind_ip_all
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./scripts:/scripts
+      - ./tls:/etc/tls
+    networks:
+      - mongo-network
+    depends_on:
+      - config
+      - shard1-data
+      - shard2-data
+      - shard3-data
+      - shard4-data
+
+  config:
+    image: mongo:8.0.0
+    deploy:
+      replicas: 3
+    command: >
+      mongod --port 27017 --configsvr --replSet configReplSet --bind_ip_all
+    volumes:
+      - ./scripts:/scripts
+      - ./tls:/etc/tls
+    networks:
+      - mongo-network
+
+  shard1-data:
+    image: mongo:8.0.0
+    deploy:
+      replicas: 2
+    command: >
+      mongod --port 27017 --shardsvr --replSet shard1ReplSet --bind_ip_all
+    volumes:
+      - ./scripts:/scripts
+      - ./tls:/etc/tls
+    networks:
+      - mongo-network
+
+  shard2-data:
+    image: mongo:8.0.0
+    deploy:
+      replicas: 2
+    command: >
+      mongod --port 27017 --shardsvr --replSet shard2ReplSet --bind_ip_all
+    volumes:
+      - ./scripts:/scripts
+      - ./tls:/etc/tls
+    networks:
+      - mongo-network
+
+  shard3-data:
+    image: mongo:8.0.0
+    deploy:
+      replicas: 2
+    command: >
+      mongod --port 27017 --shardsvr --replSet shard3ReplSet --bind_ip_all
+    volumes:
+      - ./scripts:/scripts
+      - ./tls:/etc/tls
+    networks:
+      - mongo-network
+
+  shard4-data:
+    image: mongo:8.0.0
+    deploy:
+      replicas: 2
+    command: >
+      mongod --port 27017 --shardsvr --replSet shard4ReplSet --bind_ip_all
+    volumes:
+      - ./scripts:/scripts
+      - ./tls:/etc/tls
+    networks:
+      - mongo-network
+
+  # mongo-setup:
+  #   image: mongo:8.0.0
+  #   depends_on:
+  #     - config
+  #     - shard1-data
+  #     - mongos
+  #   volumes:
+  #     - ./scripts:/scripts
+  #     - ./tls:/etc/tls
+  #   networks:
+  #     - mongo-network
+  #   restart: "no"
+  #   entrypoint: [ "bash", "./usr/mongo-init/mongo_setup.sh"]
+
+networks:
+  mongo-network:
+    driver: bridge
