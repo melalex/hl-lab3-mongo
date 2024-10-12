@@ -1,0 +1,1 @@
+docker-compose exec router sh -c "mongosh < /scripts/task-4.js"

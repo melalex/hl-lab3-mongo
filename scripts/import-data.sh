@@ -1,0 +1,1 @@
+mongoimport -d='Lab1' --collection='LondonAddress' --file='data/London_postcode-ONS-postcode-Directory-Nov14.csv' --type=csv --headerline
